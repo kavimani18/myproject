@@ -1,0 +1,86 @@
+<!-- <h1>Hello {{ name }}, how are you?</h1>
+
+
+{% with firstname="jack" %}
+<h1>Hello {{ firstname }}, how are you?</h1>
+{% endwith %}
+
+
+<h3>members data</h3>
+<ul>
+    {% for x in names %}
+    <li>{{ x.firstname }}</li>
+    {% endfor %}
+</ul>
+
+
+<h3>if elif</h3>
+{% with num=10 %}
+{% if num == 10 %}
+<p>Number is equal</p>
+{% else %}
+<p>Number is not equal</p>
+{% endif %}
+{% endwith %}
+
+
+
+-->
+
+{% if num == 5 %}
+<p>good</p>
+{% elif num == 10 %}
+<p>better</p>
+{% else %}
+<p>best</p>
+{% endif %}
+
+
+{% with num=7 %}
+{% if num <= 5 %} <p>good</p>
+    {% elif num > 5 and num <= 10 %} <p>better</p>
+        {% else %}
+        <p>best</p>
+        {% endif %}
+        {% endwith %}
+
+
+        <!--for loop-->
+        <h3>Names List using for loop</h3>
+        {% for x in names %}
+        <p>{{ x }}</p>
+        {% endfor %}
+
+        {% for x in cars %}
+        <h2>{{ x.brand }}</h2>
+        <p>Model: {{ x.model }}</p>
+        <p>Year: {{ x.year }}</p>
+        {% endfor %}
+
+        <!--for loop reversed-->
+        <h2>for loop reversed</h2>
+        {% for x in cars reversed %}
+        <h2>{{ x.brand }}</h2>
+        <p>Model: {{ x.model }}</p>
+        <p>Year: {{ x.year }}</p>
+        {% endfor %}
+
+        <h3> loop variable</h3>
+
+        <ul>
+            {% for x in names %}
+            <li>{{ forloop.counter }}</li>
+            {% endfor %}
+        </ul>
+
+        <ul>
+            {% for x in names %}
+            <li>{{ forloop.counter0 }}</li>
+            {% endfor %}
+        </ul>
+
+        <ul>
+            {% for x in names %}
+            <li> {% if forloop.first %} style='background-color:lightblue;' {% endif %}>{{ x }}</li>
+            {% endfor %}
+        </ul>
